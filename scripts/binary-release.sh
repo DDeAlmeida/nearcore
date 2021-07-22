@@ -58,16 +58,18 @@ function upload_binary {
     aws s3 cp --acl public-read target/release/$1 s3://build.openshards.io/nearcore/${os}/${commit}/$1
 }
 
+function upload_genesis_tools {
+    aws s3 cp --acl public-read genesis-tools/release/$1 s3://build.openshards.io/nearcore/${os}/${branch}/$1
+    aws s3 cp --acl public-read genesis-tools/release/$1 s3://build.openshards.io/nearcore/${os}/${commit}/$1
+}
+
 function upload_metadata {
     aws s3 cp --acl public-read outside/metadata/$1 s3://build.openshards.io/nearcore-deploy/${net}/$1
 }
 
 upload_binary near
-upload_binary keypair-generator
-upload_binary genesis-csv-to-json
-upload_binary near-vm-runner-standalone
+upload_genesis_tools keypair-generator
 upload_binary state-viewer
-upload_binary store-validator
 
 upload_metadata latest_deploy_at
 upload_metadata genesis_time
