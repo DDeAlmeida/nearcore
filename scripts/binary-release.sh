@@ -59,8 +59,8 @@ function upload_binary {
 }
 
 function upload_genesis_tools {
-    aws s3 cp --acl public-read genesis-tools/release/$1 s3://build.openshards.io/nearcore/${os}/${branch}/$1
-    aws s3 cp --acl public-read genesis-tools/release/$1 s3://build.openshards.io/nearcore/${os}/${commit}/$1
+    aws s3 cp --acl public-read genesis-tools/$1 s3://build.openshards.io/nearcore/${os}/${branch}/$1
+    aws s3 cp --acl public-read genesis-tools/$1 s3://build.openshards.io/nearcore/${os}/${commit}/$1
 }
 
 function upload_metadata {
