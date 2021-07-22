@@ -29,7 +29,7 @@
 [telegram-badge]: https://cdn.jsdelivr.net/gh/Patrolavia/telegram-badge@8fe3382b3fd3a1c533ba270e608035a27e430c2e/chat.svg
 [telegram-url]: https://t.me/cryptonear
 
-## About NEAR
+## About NEAR GuildNet
 
 NEAR's purpose is to enable community-driven innovation to benefit people around the world.
 
@@ -62,8 +62,7 @@ pip3 install --user nearup
 ```
 
 You can join all the active networks:
-* TestNet: `nearup run testnet`
-* BetaNet: `nearup run betanet`
+* GuildNet: `nearup run guildnet`
 
 Check the `nearup` repository for [more details](https://github.com/near/nearup) how to run with or without docker.
 
