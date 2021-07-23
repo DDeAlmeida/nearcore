@@ -68,7 +68,6 @@ function upload_metadata {
 }
 
 upload_binary near
-upload_genesis_tools keypair-generator
 upload_binary state-viewer
 
 upload_metadata latest_deploy_at
