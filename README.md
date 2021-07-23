@@ -53,7 +53,7 @@ Overall, *NEAR* provides a wide range of tools for developers to easily build ap
 [tutorials-url]: https://docs.nearprotocol.com/docs/roles/developer/tutorials/introduction
 [api-docs-url]: https://docs.nearprotocol.com/docs/roles/developer/examples/nearlib/introduction
 
-## Join the Network
+## Join the GuildNet Network
 
 The easiest way to join the network, is by using the `nearup` command, which you can install as follows:
 
