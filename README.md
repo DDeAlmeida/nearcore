@@ -1,13 +1,6 @@
 <br />
 <br />
 
-<p align="center">
-<img src="docs/images/logo.svg" width="240">
-</p>
-
-<br />
-<br />
-
 
 ## About GuildNet
 
