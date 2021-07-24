@@ -1,15 +1,7 @@
-<br />
-<br />
+
 
 
 ## About GuildNet
-
-NEAR's purpose is to enable community-driven innovation to benefit people around the world.
-
-To achieve this purpose, *NEAR* provides a developer platform where developers and entrepreneurs can create apps that put users back in control of their data and assets, which is the foundation of ["Open Web" movement][open-web-url].
-
-One of the components of *NEAR* is the NEAR Protocol, an infrastructure for server-less applications and smart contracts powered by a blockchain.
-NEAR Protocol is built to deliver usability and scalability of modern PaaS like Firebase at fraction of the prices that blockchains like Ethereum charge.
 
 
 ## Join the GuildNet Network
