@@ -2,7 +2,7 @@
 
 
 ## About GuildNet
-A community governed testnet ran by the Open Shard Alliance.
+A community governed testnet ran by the Open Shard Alliance (OSA).
 
 ## Join the GuildNet Network
 
