@@ -2,7 +2,7 @@ name: Test
 on:
   push:
     branches:
-      - 1.20.0-rc.2
+      - 1.21.0-rc.1
       - master
 jobs:
   test:
