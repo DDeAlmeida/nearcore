@@ -19,7 +19,11 @@ if [[ ${commit} == "HEAD" ]]; then
 fi
 os=$(uname)
 
+
+
+if [[ $msg != *"hard-fork-no-release"* ]]; then
 make release
+fi
 
 # Save network state and config to S3
 mkdir -p outside/metadata
