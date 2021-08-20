@@ -19,7 +19,7 @@ if [[ ${commit} == "HEAD" ]]; then
 fi
 os=$(uname)
 
-
+msg=$(git log --no-merges -1 --oneline)
 
 if [[ $msg != *"hard-fork-no-release"* ]]; then
 make release
@@ -37,7 +37,7 @@ ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
 
 scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/${net}/config.json outside/
 
-msg=$(git log --no-merges -1 --oneline)
+
 if [[ $msg == *"hard-fork"* ]]; then
     #accessing state-viewer more directly
     #scp -o StrictHostKeyChecking=no target/release/state-viewer $SSH_USER@$SSH_HOST:~/
