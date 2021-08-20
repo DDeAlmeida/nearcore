@@ -21,9 +21,7 @@ os=$(uname)
 
 msg=$(git log --no-merges -1 --oneline)
 
-if [[ $msg != *"hard-fork-no-release"* ]]; then
 make release
-fi
 
 # Save network state and config to S3
 mkdir -p outside/metadata
