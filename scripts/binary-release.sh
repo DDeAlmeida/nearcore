@@ -51,6 +51,7 @@ cat outside/genesis.json | jq -r '.genesis_time' > outside/metadata/genesis_time
 cat outside/genesis.json | jq -r '.protocol_version' > outside/metadata/protocol_version
 md5sum outside/genesis.json | awk '{ print $1 }' > outside/metadata/genesis_md5sum
 echo $commit > outside/metadata/latest_deploy
+echo $DEPLOY_VERSION > outside/metadata/latest_release
 
 cp outside/genesis.json outside/metadata/
 cp outside/config.json outside/metadata/
@@ -73,6 +74,7 @@ function upload_metadata {
 #upload_binary state-viewer
 
 upload_metadata latest_deploy_at
+upload_metadata latest_release
 upload_metadata genesis_time
 upload_metadata protocol_version
 upload_metadata genesis_md5sum
