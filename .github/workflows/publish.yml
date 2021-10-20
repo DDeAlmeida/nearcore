@@ -3,7 +3,7 @@ name: Build and Publish
 on:
   push:
     branches:
-      - 1.20.0-rc.2
+      - 1.22.0-rc.2 
       - master
       - beta
       - stable

@@ -19,7 +19,9 @@ if [[ ${commit} == "HEAD" ]]; then
 fi
 os=$(uname)
 
-make release
+msg=$(git log --no-merges -1 --oneline)
+
+#make release
 
 # Save network state and config to S3
 mkdir -p outside/metadata
@@ -31,17 +33,17 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa 
 ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
 
-scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/${net}/config.json outside/
+scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/config.json outside/
 
-msg=$(git log --no-merges -1 --oneline)
+
 if [[ $msg == *"hard-fork"* ]]; then
     #accessing state-viewer more directly
     #scp -o StrictHostKeyChecking=no target/release/state-viewer $SSH_USER@$SSH_HOST:~/
     #ssh $SSH_USER@$SSH_HOST "~/.nearup/nearup stop && ./state-viewer --home ~/.near/${net}/ dump_state && ~/.nearup/nearup ${net} --nodocker"
-    ssh $SSH_USER@$SSH_HOST "source ~/.cargo/env && cd ~/nearcore && ~/.nearup/nearup stop && cargo run -p state-viewer -- --home ~/.near/${net} dump_state" 
+    ssh $SSH_USER@$SSH_HOST "source ~/.cargo/env && cd ~/nearcore && ~/.local/bin/nearup stop && cargo run -p state-viewer -- --home ~/.near/${net} dump_state" 
     scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/${net}/output.json outside/genesis.json
 else
-    scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/${net}/genesis.json outside/
+    scp -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST:~/.near/genesis.json outside/
 fi
 
 date '+%Y%m%d_%H%M%S' > outside/metadata/latest_deploy_at
