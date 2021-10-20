@@ -69,8 +69,8 @@ function upload_metadata {
     aws s3 cp --acl public-read outside/metadata/$1 s3://build.openshards.io/nearcore-deploy/${net}/$1
 }
 
-upload_binary near
-upload_binary state-viewer
+#upload_binary near
+#upload_binary state-viewer
 
 upload_metadata latest_deploy_at
 upload_metadata genesis_time
